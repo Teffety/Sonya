@@ -1,0 +1,240 @@
+:root {
+  --linearGradient: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 100%);
+  --colorCoral: rgb(252, 102, 87);
+  --colorWarm:rgba(255, 222, 191, 0.51);
+  --colorPolit1: rgb(235, 63, 200);
+  --colorPolit2:rgb(76, 167, 201);
+  --colorPolit3:rgb(22, 156, 30);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+}
+
+#wrapper {
+  display: grid;
+  grid-template: 150px 1fr /100%;
+  min-height: 100%;
+  position: relative;
+  grid-template-areas: "header"
+    "main";
+}
+
+header {
+  grid-area: header;
+
+}
+.headerDiv{
+  display: flex;
+  position: relative;
+  justify-content:space-between;
+  align-items: stretch;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.main__content__btn {
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 2em;
+  padding: 5px;
+}
+
+.main__content__btn:first-child {
+  border-bottom: 2px solid var(--colorCoral);
+}
+
+#content {
+
+  width: 100%;
+}
+
+.First {
+  line-height: 0;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  animation: pageUp 1s ease-in-out;
+}
+
+.Second {
+  line-height: 0;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  animation: pageUp 1s ease-in-out;
+}
+.Third{
+  align-items: center;
+  position: relative;
+  display: grid;
+  justify-content: center;
+   -webkit-column-gap: 10px;
+   -moz-column-gap: 10px;
+     animation: pageUp 1s ease-in-out;
+}
+#submit{
+  border: none;
+  background: none;
+}
+@keyframes pageUp {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .First,
+  .Second
+  {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1000px) {
+  .First,
+  .Second{
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .First,
+  .Second{
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .First,
+  .Second{
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+.gallery__item {
+  position: relative;
+}
+
+.gallery__item {
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+}
+
+.gallery__item__imgBox img,
+.gallery__item__text {
+  overflow: hidden;
+  transition: .8s linear;
+  backface-visibility: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.gallery__item__imgBox img, {
+
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.gallery__item__text {
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background:var(--colorWarm);
+  box-sizing: border-box;
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.gallery__item:hover>.gallery__item__imgBox img {
+  opacity: 0;
+  
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.gallery__item:hover>.gallery__item__text {
+  opacity: 1;
+  
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.gallery__item__text h3 {
+  line-height: 1em;
+  text-align: center;
+  transition: .5s;
+}
+
+.gallery__item__text p {
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1em;
+  text-align: center;
+  transition: .5s;
+}
+
+.labelSonay::after{
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100px;
+  background: url('../files/whatsapp.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+form {
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aqua;
+  padding: 12px;
+}
+
+form input,
+form textarea {
+  height: 100%;
+  background-color: grey;
+  font-size: 1.3em;
+  
+
+}
+
+.textMessage{
+  text-align: center;
+}
+footer {
+  grid-area: footer
+}
