@@ -36,6 +36,7 @@ const json = [{
   h3: 'test44',
   p: 'lorem lorem lorem ollaa12323'
 }];
+const sonayLinks = [{link:'https://www.instagram.com/sofikumpan/'},{link:'forofferskumpan@gmail.com'},{link:'https://vk.com/sourarter'}];
 
 const wrapper = document.getElementById('wrapper');
 const header = document.querySelector('header');
